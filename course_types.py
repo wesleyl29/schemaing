@@ -1,26 +1,31 @@
 import csv
 
-course_type = []
 
-def get_data():
-    file_path = "CourseName,Type,Department.csv"
+class CourseTypes:
+    def __init__(self, course_type):
+        self.course_type = course_type
 
-    with open(file_path, 'r') as file:
-        reader = csv.reader(file)
-        for row in reader:
-            course_type.append(f"( {row[1]} ), \n")
+    def __str__(self):
+        return "INSERT INTO CourseType ( CourseTypeName ) VALUES ( '" + self.course_type + "' )"
 
-def __str__():
-    statement = "INSERT INTO CourseType(CourseTypeName) VALUES \n"
 
-    for course in course_type:
-        if course != course_type[-1]:
-            statement += course
-        else:
-            statement += course.replace(",", "")
+def validate_string(string: str) -> str:
+    if not isinstance(string, str):
+        raise TypeError("Argument must be a string.")
 
-    return statement
+    return string.replace("'", "''")
 
-get_data()
-course_type = list(dict.fromkeys(course_type))
-print(__str__())
+
+course_types = []
+file_path = "./CourseName,Type,Department.csv"
+
+with open(file_path, 'r') as file:
+    reader = csv.reader(file)
+    for row in reader:
+        course_types.append(CourseTypes(validate_string(row[1])))
+
+course_types = list(dict.fromkeys(course_types)) # remove duplicates
+
+with open("./cmd.sql", 'a') as file:
+    for course in course_types:
+        print(course, file = file)
