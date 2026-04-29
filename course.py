@@ -13,8 +13,12 @@ class Course(CourseTypes):
         return f"INSERT INTO Course ( CourseName, CourseTypeID ) VALUES ( '{self.name}', {self.foreign_id} );"
 
     @staticmethod
-    def get_dictionary() -> dict:
+    def get_dictionary() -> dict: # from parent
         return CourseTypes.give_dictionary()
 
+    @staticmethod
+    def give_dictionary() -> dict:
 
-print(Course.get_dictionary())
+
+
+

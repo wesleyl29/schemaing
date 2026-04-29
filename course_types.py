@@ -1,5 +1,7 @@
 import csv
 
+from utility import Utility
+
 
 class CourseTypes:
     def __init__(self, course_type: str):
@@ -16,7 +18,7 @@ class CourseTypes:
         with open(file_path, 'r') as file:
             reader = csv.reader(file)
             for row in reader:
-                validated_string = CourseTypes.validate_string(row[column])
+                validated_string = Utility.validate_string(row[column])
 
                 if not validated_string in data:
                     data_as_class.append(CourseTypes(validated_string))
@@ -24,12 +26,6 @@ class CourseTypes:
 
         return data_as_class
 
-    @staticmethod
-    def validate_string(string: str) -> str:
-        if not isinstance(string, str):
-            raise TypeError("Argument must be a string.")
-
-        return string.replace("'", "''")
 
     @staticmethod
     def give_dictionary() -> dict:
