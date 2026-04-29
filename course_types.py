@@ -2,11 +2,11 @@ import csv
 
 
 class CourseTypes:
-    def __init__(self, course_type):
+    def __init__(self, course_type: str):
         self.course_type = course_type
 
     def __str__(self):
-        return "INSERT INTO CourseType ( CourseTypeName ) VALUES ( '" + self.course_type + "' )"
+        return f"INSERT INTO CourseType ( CourseTypeName ) VALUES ( '{self.course_type}' );"
 
     @staticmethod
     def build_data(file_path: str, column: int) -> list:
@@ -30,6 +30,18 @@ class CourseTypes:
             raise TypeError("Argument must be a string.")
 
         return string.replace("'", "''")
+
+    @staticmethod
+    def give_dictionary() -> dict:
+        names = CourseTypes.build_data("./CourseName,Type,Department.csv", 1)
+        count = 1
+        dictionary = {}
+
+        for name in names:
+            dictionary[name.course_type] = count
+            count += 1
+
+        return dictionary
 
 
 course_types = CourseTypes.build_data("./CourseName,Type,Department.csv", 1)
