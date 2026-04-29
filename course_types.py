@@ -8,26 +8,32 @@ class CourseTypes:
     def __str__(self):
         return "INSERT INTO CourseType ( CourseTypeName ) VALUES ( '" + self.course_type + "' )"
 
+    @staticmethod
+    def build_data(file_path: str, column: int) -> list:
+        data = set()
+        data_as_class = []
 
-def validate_string(string: str) -> str:
-    if not isinstance(string, str):
-        raise TypeError("Argument must be a string.")
+        with open(file_path, 'r') as file:
+            reader = csv.reader(file)
+            for row in reader:
+                validated_string = CourseTypes.validate_string(row[column])
 
-    return string.replace("'", "''")
+                if not validated_string in data:
+                    data_as_class.append(CourseTypes(validated_string))
+                    data.add(validated_string)
 
-course_types = set()
-course_types_class = []
-file_path = "./CourseName,Type,Department.csv"
+        return data_as_class
 
-with open(file_path, 'r') as file:
-    reader = csv.reader(file)
-    for row in reader:
-        validated_string = validate_string(row[1])
-        
-        if not validated_string in course_types:
-            course_types_class.append(CourseTypes(validated_string))
-            course_types.add(validated_string)
+    @staticmethod
+    def validate_string(string: str) -> str:
+        if not isinstance(string, str):
+            raise TypeError("Argument must be a string.")
+
+        return string.replace("'", "''")
+
+
+course_types = CourseTypes.build_data("./CourseName,Type,Department.csv", 1)
 
 with open("./cmd.sql", 'a') as file:
-    for course in course_types_class:
-        print(course, file = file)
+    for course in course_types:
+        print(course, file=file)
