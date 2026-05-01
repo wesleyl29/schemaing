@@ -11,8 +11,13 @@ class Utility:
 
     @staticmethod
     def build_data_csv(file_path: str, column: int, class_name: type) -> list:
+        if not isinstance(column, int) {
+            raise TypeError("Column should be the index of the desired column of the csv.")
+        }
+        
         data = set()
         data_as_class = []
+
 
         with open(file_path, 'r') as file:
             reader = csv.reader(file)
