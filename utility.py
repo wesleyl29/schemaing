@@ -10,14 +10,8 @@ class Utility:
         return string.replace("'", "''")
 
     @staticmethod
-    def build_data_csv(file_path: str, column: int, class_name: type) -> list:
-        if not isinstance(column, int):
-            raise TypeError("Column should be the index of the desired column of the csv.")
-        
-        
-        data = set()
-        data_as_class = []
-
+    def build_data_csv_no_duplicates(file_path: str, column: int) -> list:
+        data = []
 
         with open(file_path, 'r') as file:
             reader = csv.reader(file)
@@ -25,7 +19,20 @@ class Utility:
                 validated_string = Utility.validate_string(row[column])
 
                 if not validated_string in data:
-                    data_as_class.append(class_name(validated_string))
-                    data.add(validated_string)
+                    data.append(validated_string)
 
-        return data_as_class
+
+        return list(dict.fromkeys(data)) # remove duplicates
+
+    @staticmethod
+    def build_data_csv(file_path: str, column: int) -> list:
+        data = []
+
+        with open(file_path, 'r') as file:
+            reader = csv.reader(file)
+
+            for row in reader:
+                validated_string = Utility.validate_string(row[column])
+                data.append(validated_string)
+
+        return data
