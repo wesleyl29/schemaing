@@ -7,17 +7,23 @@ class Room:
         return "INSERT INTO Room VALUES (null, \""+self.room+"\");"
 
 roomList = []
-
+roomDict = {}
+roomID=1
 for i in range(1,21):
     for char in "NWSE":
-        rom="B"+char+str(i)
-        room=Room(rom)
-        roomList.append(room)
-        for j in range (1, 9):
-            rom=str(j)+char+str(i)
-            room = Room(rom)
-            roomList.append(room)
+        for j in range (0, 9):
+            if j==0:
+                rom="B"+char+str(i)
+                room=Room(rom)
+                roomList.append(room)
+            else:
+                rom = str(j) + char + str(i)
+                room = Room(rom)
+                roomList.append(room)
+            roomDict[roomID]="Unoccupied "+rom
+            roomID+=1
 
+print(roomDict.items())
 for room in roomList:
     with open('cmd.sql','a') as f:
         print(room.__str__(),file = f)
