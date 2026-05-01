@@ -11,36 +11,19 @@ class CourseTypes:
         return f"INSERT INTO CourseType ( CourseTypeName ) VALUES ( '{self.course_type}' );"
 
     @staticmethod
-    def build_data(file_path: str, column: int) -> list:
-        data = set()
-        data_as_class = []
-
-        with open(file_path, 'r') as file:
-            reader = csv.reader(file)
-            for row in reader:
-                validated_string = Utility.validate_string(row[column])
-
-                if not validated_string in data:
-                    data_as_class.append(CourseTypes(validated_string))
-                    data.add(validated_string)
-
-        return data_as_class
-
-
-    @staticmethod
-    def give_dictionary() -> dict:
-        names = CourseTypes.build_data("./CourseName,Type,Department.csv", 1)
+    def get_dictionary() -> dict:
+        courses = Utility.build_data_csv("./CourseName,Type,Department.csv", 1, CourseTypes)
         count = 1
         dictionary = {}
 
-        for name in names:
-            dictionary[name.course_type] = count
+        for course in courses:
+            dictionary[course.course_type] = count
             count += 1
 
         return dictionary
 
 
-course_types = CourseTypes.build_data("./CourseName,Type,Department.csv", 1)
+course_types = Utility.build_data_csv("./CourseName,Type,Department.csv", 1, CourseTypes)
 
 with open("./cmd.sql", 'a') as file:
     for course in course_types:
