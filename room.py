@@ -22,21 +22,20 @@ class Room:
 
         return dictionary
 
-roomList = []
-roomID=1
+room_list = []
 for i in range(1,21):
     for char in "NWSE":
         for j in range (0, 9):
             if j==0:
                 rom="B"+char+str(i)
                 room=Room(rom,False)
-                roomList.append(room)
+                room_list.append(room)
             else:
                 rom = str(j) + char + str(i)
                 room = Room(rom,False)
-                roomList.append(room)
+                room_list.append(room)
 
 print(Room.get_dict())
-for room in roomList:
+for room in room_list:
     with open('cmd.sql','a') as f:
         print(room.__str__(),file = f)
