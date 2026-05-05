@@ -19,7 +19,7 @@ class Room:
                     else:
                         rom = str(j) + char + str(i)
                     dictionary[rom]=count
-
+                    count+=1
         return dictionary
 
 room_list = []
@@ -36,6 +36,6 @@ for i in range(1,21):
                 room_list.append(room)
 
 print(Room.get_dict())
-for room in room_list:
-    with open('cmd.sql','a') as f:
+with open('cmd.sql','a') as f:
+    for room in room_list:
         print(room.__str__(),file = f)
