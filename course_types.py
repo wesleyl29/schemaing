@@ -9,7 +9,7 @@ class CourseTypes:
         return f"INSERT INTO CourseType ( CourseTypeName ) VALUES ( '{self.course_type}' );"
 
     @staticmethod
-    def get_dictionary() -> dict:
+    def get_dict() -> dict:
         courses = Utility.build_data_csv_no_duplicates("./CourseName,Type,Department.csv", 1)
         count = 1
         dictionary = {}

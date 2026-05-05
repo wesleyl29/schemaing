@@ -1,4 +1,5 @@
 from course import Course
+from room import Room
 
 
 class Class:
@@ -12,8 +13,9 @@ class Class:
         return f"INSERT INTO Class ( Period, RoomID, TeacherID, CourseID, ClassID ) VALUES ( {self.period}, {self.room_id}, {self.teacher_id}, {self.course_id} );"
 
     @staticmethod
-    def get_dictionary():
+    def get_dict():
         pass
 
 
-course_dictionary = Course.get_dictionary()
+course_dictionary = Course.get_dict()
+room_dictionary = Room.get_dict()

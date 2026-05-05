@@ -21,8 +21,7 @@ class Utility:
                 if not validated_string in data:
                     data.append(validated_string)
 
-
-        return list(dict.fromkeys(data)) # remove duplicates
+        return list(dict.fromkeys(data))  # remove duplicates
 
     @staticmethod
     def build_data_csv(file_path: str, column: int) -> list:

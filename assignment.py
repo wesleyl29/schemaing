@@ -1,33 +1,33 @@
 import random
 
+from student import Student
+from assignment_types import AssignmentType
 
+# TODO: cannot be done right now
 class Assignment:
-    def __init__(self,course_name: str):
-        self.course_name = course_name
-    
+    def __init__(self, assignment_name: str, assignment_id: int, class_id: int, grade: int, student_id: int):
+        self.assignment_name = assignment_name
+        self.assignment_id = assignment_id
+        self.class_id = class_id
+        self.grade = grade
+        self.student_id = student_id
+
     def __str__(self):
-            return "INSERT INTO Assignment VALUES("+self.course_name
+        return f"""INSERT INTO Assignment (AssignmentType, AssignmentTypeID, CourseID, Grade, StudentID) VALUES( 
+        '{self.assignment_name}', {self.assignment_id}, {self.class_id}, {self.grade}, {self.student_id} );"""
 
     @staticmethod
-    def get_dictionary() -> dict:
-        dictionary = {}
+    def get_dict() -> dict:
+        pass
 
-        dictionary["Minor Assignment"] = 1
-        dictionary["Major Assignment"] = 2
-        return dictionary
+# TODO: add class dictionary
+assignment_count = 0
+assignment_id = 1
+student_dict = Student.get_dict()
+assignment_type_dict = AssignmentType.get_dict()
+student = list(student_dict)
+assignment_type = list(assignment_type_dict)
 
-assignment_count=0
-assignment_list = []
-assignment_id=1
-with open('Courses') as file:
-    for line in file:
-        for i in range(1,13):
-            course_name = Assignment(line.strip())
-            assignment_count += 1
-            print(course_name.__str__() + " Minor Assignment "+ assignment_count.__str__()+ ", " +str(assignment_id)+", 1, "+str(random.randint(75,100))+");")
-            if assignment_count == 12:
-                print(f'{course_name}  Major Assignment 1, {str(assignment_id)}  , 2,   {str(random.randint(75, 100))}  );)')
-                print(f'{course_name}  Major Assignment 2, {str(assignment_id)}  , 2,   {str(random.randint(75, 100))}  );)')
-                print(f'{course_name}  Major Assignment 3, {str(assignment_id)}  , 2,   {str(random.randint(75, 100))}  );)')
-                assignment_id+=1
-                assignment_count=0
+with open('./cmd.sql', 'a') as file:
+    for i in range(1, 13):
+        pass
