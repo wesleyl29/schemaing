@@ -54,18 +54,18 @@ teacher_id=1
 
 department=Department('null','null')
 with open('teacher_data.txt') as file:
-    for line in file:
-        if line.strip()=="break":
-            department=Department(dept_id,file.readline().strip())
-            department_list.append(department)
-            dept_id+=1
-        teacher = Teacher(line.strip(),"null",department.get_name())
-        if teacher.get_name()=="break":
-            pass
-        else:
-            teacher_list.append(teacher)
-            teacher_id+=1
-
+        for line in file:
+                if line.strip()=="break":
+                            department=Department(dept_id,file.readline().strip())
+                                        department_list.append(department)
+                                                    dept_id+=1
+                                                            teacher = Teacher(line.strip(),"null",department.get_name())
+                                                                    if teacher.get_name()=="break":
+                                                                                pass
+                                                                                        else:
+                                                                                                    teacher_list.append(teacher)
+                                                                                                                teacher_id+=1
+                                                                                                                
 with open('cmd.sql', 'a') as file:
     for teacher in teacher_list:
        print(teacher.__str__(), file = file)
