@@ -14,12 +14,17 @@ class Class:
     def __str__(self):
         return f"INSERT INTO Class ( Period, RoomID, TeacherID, CourseID, ClassID ) VALUES ( {self.period}, {self.room_id}, {self.teacher_id}, {self.course_id} );"
 
+    @clsmethod
+    def generate_class():
+        return (random.randint(167,200),random.randint(1,11))
+
     @staticmethod
     def get_dict():
         class_dict = {}
+
         
 
 
 course_dictionary = Course.get_dict()
 room_dictionary = Room.get_dict()
-teacher_dictionary = teacher.get_dict()
+teacher_dictionary = Teacher.get_dict()
