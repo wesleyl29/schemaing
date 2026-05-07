@@ -15,14 +15,17 @@ class Class:
         return f"INSERT INTO Class ( Period, RoomID, TeacherID, CourseID, ClassID ) VALUES ( {self.period}, {self.room_id}, {self.teacher_id}, {self.course_id} );"
 
     @clsmethod
-    def generate_class():
-        return (random.randint(167,200),random.randint(1,11))
+    def generate_class() -> list:
+        amount_of_class = []
+        for i in range(10):
+             amount_of_class.append(random.randint(167,200))
+        return amount_of_class
 
     @staticmethod
     def get_dict():
         class_dict = {}
-
-        
+        amount = generate_class()
+        for i in range(amount_of_class[i] + amount_of_class[i+1])
 
 
 course_dictionary = Course.get_dict()
