@@ -14,18 +14,12 @@ class Class:
     def __str__(self):
         return f"INSERT INTO Class ( Period, RoomID, TeacherID, CourseID, ClassID ) VALUES ( {self.period}, {self.room_id}, {self.teacher_id}, {self.course_id} );"
 
-    @classmethod
-    def generate_class(cls) -> list:
-        amount_of_class = []
-        for i in range(10):
-             amount_of_class.append(random.randint(167,200))
-        return amount_of_class
-
     @staticmethod
     def get_dict() -> dict:
         count = 1
         class_dict = {}
-        amount = generate_class()
+        object = Class(1,1,1,1)
+        amount = object.generate_class()
         for num in amount:
             for i in range(num):
                 class_dict[f"c{i}p{amount}"] = count
@@ -36,4 +30,3 @@ course_dictionary = Course.get_dict()
 room_dictionary = Room.get_dict()
 teacher_dictionary = Teacher.get_dict()
 
-print(get_dict)
