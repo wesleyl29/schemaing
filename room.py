@@ -34,7 +34,6 @@ for i in range(1,21):
                 room = Room(rom,False)
                 room_list.append(room)
 
-print(Room.get_dict())
 with open('cmd.sql','a') as f:
     for room in room_list:
         print(room.__str__(),file = f)
