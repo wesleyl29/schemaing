@@ -1,11 +1,10 @@
 class Room:
-    def __init__(self,room,occupied):
+    def __init__(self,room):
         self.room=room
-        self.occupied=False
         #id auto increments
 
     def __str__(self):
-        return "INSERT INTO Room VALUES (null, \""+self.room+"\");"
+        return f"INSERT INTO Room  VALUES (null, \""+self.room+"\");"
 
     @staticmethod
     def get_dict() -> dict:

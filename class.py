@@ -32,8 +32,12 @@ class Class:
         return class_dict
 
 
-def get_random(dictionary: dict) -> int:
-    return random.choice(list(dictionary.values()))
+def get_random(dictionary: dict, amount: int) -> list:
+    return random.sample(list(dictionary.values()), amount)
+
+
+def get_random_duplicates(dictionary: dict, amount: int) -> list:
+    return random.choices(list(dictionary.values()), k=amount)
 
 
 course_dictionary = Course.get_dict()
@@ -41,10 +45,11 @@ room_dictionary = Room.get_dict()
 teacher_dictionary = Teacher.get_dict()
 
 with open("./cmd.sql", 'a') as file:
-    for period, num in enumerate(Class.classes_amount):
-        for i in range(num):
-            teacher = get_random(teacher_dictionary)
-            room = get_random(room_dictionary)
-            course = get_random(course_dictionary)
+    for period, amount_of_classes in enumerate(Class.classes_amount):
+        teachers = get_random(teacher_dictionary, amount_of_classes)
+        rooms = get_random(room_dictionary, amount_of_classes)
+        courses = get_random_duplicates(course_dictionary, amount_of_classes)
+        teachers_rooms_courses = list(zip(teachers, rooms, courses))
 
-            print(Class(period + 1, room, teacher, course), file=file)
+        for teacher, room, course in teachers_rooms_courses:
+            print(Class(period + 1, teacher, room, course), file=file)
