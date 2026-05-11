@@ -4,6 +4,7 @@ from course import Course
 from room import Room
 from teacher import Teacher
 
+
 class Class:
     # remove seed after testing
     random.seed(42)
@@ -31,16 +32,19 @@ class Class:
         return class_dict
 
 
-def get_random(amount: int, dictionary: dict) -> []:
-    return random.choices(list(dictionary.values()), k=amount)
-
-def get_random_no_duplicates(amount: int, dictionary: dict) -> []:
-    return random.sample(list(dictionary.values()), amount)
-
+def get_random(dictionary: dict) -> int:
+    return random.choice(list(dictionary.values()))
 
 
 course_dictionary = Course.get_dict()
 room_dictionary = Room.get_dict()
 teacher_dictionary = Teacher.get_dict()
 
-print(Class.get_dict())
+with open("./cmd.sql", 'a') as file:
+    for period, num in enumerate(Class.classes_amount):
+        for i in range(num):
+            teacher = get_random(teacher_dictionary)
+            room = get_random(room_dictionary)
+            course = get_random(course_dictionary)
+
+            print(Class(period + 1, room, teacher, course), file=file)
