@@ -8,7 +8,7 @@ from teacher import Teacher
 class Class:
     # remove seed after testing
     random.seed(42)
-    classes_amount = [random.randint(167, 200) for _ in range(10)]
+    CLASSES_AMOUNT = [random.randint(167, 200) for _ in range(10)]
 
     def __init__(self, period: int, room_id: int, teacher_id: int, course_id: int):
         self.period = period
@@ -24,7 +24,7 @@ class Class:
         count = 1
         class_dict = {}
 
-        for index, num in enumerate(Class.classes_amount):
+        for index, num in enumerate(Class.CLASSES_AMOUNT):
             for i in range(num):
                 class_dict[f"c{i}p{index + 1}"] = count
                 count += 1
@@ -45,7 +45,7 @@ room_dictionary = Room.get_dict()
 teacher_dictionary = Teacher.get_dict()
 
 with open("./cmd.sql", 'a') as file:
-    for period, amount_of_classes in enumerate(Class.classes_amount):
+    for period, amount_of_classes in enumerate(Class.CLASSES_AMOUNT):
         teachers = get_random(teacher_dictionary, amount_of_classes)
         rooms = get_random(room_dictionary, amount_of_classes)
         courses = get_random_duplicates(course_dictionary, amount_of_classes)
