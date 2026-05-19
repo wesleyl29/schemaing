@@ -21,6 +21,7 @@ class Assignment:
         pass
 
 # TODO: add class dictionary
+
 assignment_count = 0
 assignment_id = 1
 student_dict = Student.get_dict()
