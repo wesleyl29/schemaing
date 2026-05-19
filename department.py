@@ -1,29 +1,19 @@
+from utility import Utility
+
 class Department:
-    def __init__(self, department_name: str):
+    department_id = 1
+
+    def __init__(self, department_name: str, dept_id: int):
+        self.dept_id = dept_id
         self.department_name = department_name
 
     def __str__(self):
         return f"INSERT INTO Department (DepartmentName) VALUES ('{self.department_name}');"
 
     @staticmethod
-    def get_dict() -> dict:
-        dept_dict = {}
-        dept_id = 1
-        with open("teacher_file.txt", 'r') as file:
-            for line in file:
-                if line.strip().split(', ', 1)[1] in dept_dict:
-                    pass
-                else:
-                    dept_dict[line.strip().split(', ',1)[1]] = dept_id
-                    dept_id += 1
-        return dept_dict
-
-department_dict = Department.get_dict()
-department_list = []
-for key in department_dict:
-    dept = Department(key)
-    department_list.append(dept)
-
-with open("cmd.sql",'a') as f:
-    for dept in department_list:
-        print(dept, file = f)
+    def departments() -> list:
+        dept_name_list = Utility.build_data_csv_no_duplicates('/workspaces/schemaing/teacher_file.txt', 1)
+        dept_list = []
+        for dept_key, name in enumerate(dept_name_list):
+            dept_list.append(Department(name, dept_key + 1))
+        return dept_list

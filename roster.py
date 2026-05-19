@@ -23,6 +23,3 @@ def get_class_list(period: int) -> list:
 
     return classes
 
-
-student_dict = Student.get_dict()
-class_dict = Class.get_dict()
