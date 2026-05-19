@@ -15,9 +15,7 @@ class Roster:
 student_dict = Student.get_dict()
 class_dict = Class.get_dict()
 student_list = list(student_dict.values())
-
+print(class_dict)
 for class_amount in Class.CLASSES_AMOUNT:
-    assigned_students = 0
-    
     for i in range(class_amount):
         pass

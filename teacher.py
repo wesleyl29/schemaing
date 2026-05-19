@@ -25,7 +25,7 @@ with open("teacher_file.txt", 'r') as f:
     for line in f:
         dept = line.strip().split(', ',1)[1]
         teacher = Teacher(line.strip().split(',',1)[0], dept_dict[dept])
-        teacher_list.append(Utility.validate_string(teacher))
+        teacher_list.append(Utility.validate_string(line.strip().split(',',1)[0]))
 
 with open("cmd.sql",'a') as f:
     for teach in teacher_list:
