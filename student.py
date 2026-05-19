@@ -24,8 +24,8 @@ student_dict = Student.get_dict()
 student_id = 1
 with open("student_names.txt", 'r') as file:
     for line in file:
-        student = Student(line.strip())
-        student_list.append(Utility.validate_string(student))
+        student = Student(Utility.validate_string(line.strip()))
+        student_list.append(student)
 
 with open("cmd.sql", 'a') as f:
     for student in student_list:
