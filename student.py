@@ -1,7 +1,7 @@
 from utility import Utility
 
 class Student:
-    def __init__(self, name):
+    def __init__(self, name: str):
         self.name = name
         # id auto increments
 
