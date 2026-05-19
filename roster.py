@@ -26,3 +26,6 @@ def get_class_list(period: int) -> list:
 
 student_dict = Student.get_dict()
 class_dict = Class.get_dict()
+
+for i in range(10):
+    classes = get_class_list
