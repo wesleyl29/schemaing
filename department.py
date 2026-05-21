@@ -15,5 +15,16 @@ class Department:
         dept_name_list = Utility.build_data_csv_no_duplicates('/workspaces/schemaing/teacher_file.txt', 1)
         dept_list = []
         for dept_key, name in enumerate(dept_name_list):
-            dept_list.append(Department(name, dept_key + 1))
+            dept_list.append(Department(name[1:], dept_key + 1))
         return dept_list
+
+    @staticmethod
+    def get_dept_id(dept: str) -> int:
+        list = Department.departments()
+        for department in list:
+            if department.get_name() == dept:
+                return list.index(department)
+        return 2
+
+    def get_name(self) -> str:
+        return self.department_name

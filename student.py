@@ -1,8 +1,6 @@
 from utility import Utility
 
 class Student:
-    
-
     def __init__(self, name: str, student_id: int):
         self.student_id = student_id
         self.name = name
@@ -15,6 +13,11 @@ class Student:
     def student_cmd() -> list:
         student_list = []
         with open("student_names.txt", 'r') as file:
-            for line in file:
-                student = Student(line.strip())
-                student_list.append(Utility.validate_string(line.strip()))
+            for stud_key, line in enumerate(file):
+                student = Student(line.strip(), stud_key+1)
+                student_list.append(student)
+        return student_list
+    
+    @property
+    def get_id(self):
+        return self.student_id

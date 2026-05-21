@@ -1,5 +1,7 @@
 from department import Department
+from student import Student
+from teacher import Teacher
 
-jiergfjerkh = Department.departments()
-for itjgitjg in jiergfjerkh:
-    print(itjgitjg)
+jiergfjerkh = Teacher.teacher_cmd()
+for j in jiergfjerkh:
+    print(j)
