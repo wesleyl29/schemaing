@@ -14,6 +14,10 @@ class Course:
     def __str__(self):
         return f"INSERT INTO Course ( CourseName, CourseTypeID ) VALUES ( '{self.course_name}', {self.course_type_id} );"
 
+    @property
+    def get_course_id(self):
+        return self.course_id
+
     @staticmethod
     def get_id(name: str) -> int:
         return Course.course_dict[name]
