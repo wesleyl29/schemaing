@@ -9,20 +9,8 @@ class CourseTypes:
         return f"INSERT INTO CourseType ( CourseTypeName ) VALUES ( '{self.course_type}' );"
 
     @staticmethod
-    def get_dict() -> dict:
-        courses = Utility.build_data_csv_no_duplicates("./CourseName,Type,Department.csv", 1)
-        count = 1
-        dictionary = {}
-
-        for course in courses:
-            dictionary[CourseTypes(course).course_type] = count
-            count += 1
-
-        return dictionary
-
-
-course_types = Utility.build_data_csv_no_duplicates("./CourseName,Type,Department.csv", 1)
-
-with open("./cmd.sql", 'a') as file:
-    for course in course_types:
-        print(CourseTypes(course), file=file)
+    def coursingtyping():
+        course_types = Utility.build_data_csv_no_duplicates("./CourseName,Type,Department.csv", 1)
+        with open("./cmd.sql", 'a') as file:
+            for course in course_types:
+                print(CourseTypes(course), file=file)
