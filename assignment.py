@@ -1,7 +1,7 @@
 import random
 
 from student import Student
-from assignment_types import AssignmentType
+from assignment_type import AssignmentType
 
 # TODO: cannot be done right now
 class Assignment:

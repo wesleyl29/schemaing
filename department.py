@@ -20,7 +20,7 @@ class Department:
 
     @staticmethod
     def get_dept_id(dept: str) -> int:
-        list = Department.departments()
+        list = Department.get_department_list()
         for department in list:
             if department.get_name() == dept:
                 return list.index(department)
