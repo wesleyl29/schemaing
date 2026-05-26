@@ -17,7 +17,7 @@ class CourseTypes:
         return CourseTypes.course_type_dict[name]
 
     @staticmethod
-    def get_course_type_list():
+    def get_course_type_list() -> list:
         course_types_name = Utility.build_data_csv_no_duplicates("./CourseName,Type,Department.csv", 1)
         course_types = []
 
