@@ -9,7 +9,7 @@ class Room:
         return f"INSERT INTO Room (Class) VALUES ('{self.room}');"
 
     @staticmethod
-    def room_cmds() -> list:
+    def get_room_list() -> list:
         room_list = []
         for i in range(1,21):
             for char in "NWSE":

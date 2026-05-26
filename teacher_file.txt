@@ -35,30 +35,30 @@ Mr. Conrad Richman, Chemistry
 Ms. Shirley Shameen, Chemistry
 Dr. Joseph Shtab, Chemistry
 Dr. Horace Walcott, Chemistry
-Mr. Ivan Turner, CTE, Computer Science & Engineering
-Mr. Miguel Zeng, CTE, Computer Science & Engineering
-Ms. Vickie Albury, CTE, Computer Science & Engineering
-Kuvar Bhatnagar, CTE, Computer Science & Engineering
-Mr. Carlos Blackwood, CTE, Computer Science & Engineering
-Mr. Michael Boulis, CTE, Computer Science & Engineering
-Ms. Wandy Chang, CTE, Computer Science & Engineering
-Mr. Luis Collado, CTE, Computer Science & Engineering
-Mr. Rupesh Das, CTE, Computer Science & Engineering
-Ms. Shaina Doherty, CTE, Computer Science & Engineering
-Ms. Jessica Du Ward, CTE, Computer Science & Engineering
-Mr. Nathan Folwell, CTE, Computer Science & Engineering
-Mr. Ali Harb, CTE, Computer Science & Engineering
-Mr. Quincy Holmer, CTE, Computer Science & Engineering
-Ms. Reina Joa, CTE, Computer Science & Engineering
-Ms. Rachel Kaufman, CTE, Computer Science & Engineering
-Mr. Hoiming Bonny Lee, CTE, Computer Science & Engineering
-Mr. Tsee Lee, CTE, Computer Science & Engineering
-Mr. Rick Lopez, CTE, Computer Science & Engineering
-Mr. Timothy Lyons, CTE, Computer Science & Engineering
-Mr. Mike Miller, CTE, Computer Science & Engineering
-Ms. Marina Moshchenko, CTE, Computer Science & Engineering
-Dr. Thomas Price, CTE, Computer Science & Engineering
-Ms. Tiffany Wong, CTE, Computer Science & Engineering
+Mr. Ivan Turner, CTE Computer Science & Engineering
+Mr. Miguel Zeng, CTE Computer Science & Engineering
+Ms. Vickie Albury, CTE Computer Science & Engineering
+Kuvar Bhatnagar, CTE Computer Science & Engineering
+Mr. Carlos Blackwood, CTE Computer Science & Engineering
+Mr. Michael Boulis, CTE Computer Science & Engineering
+Ms. Wandy Chang, CTE Computer Science & Engineering
+Mr. Luis Collado, CTE Computer Science & Engineering
+Mr. Rupesh Das, CTE Computer Science & Engineering
+Ms. Shaina Doherty, CTE Computer Science & Engineering
+Ms. Jessica Du Ward, CTE Computer Science & Engineering
+Mr. Nathan Folwell, CTE Computer Science & Engineering
+Mr. Ali Harb, CTE Computer Science & Engineering
+Mr. Quincy Holmer, CTE Computer Science & Engineering
+Ms. Reina Joa, CTE Computer Science & Engineering
+Ms. Rachel Kaufman, CTE Computer Science & Engineering
+Mr. Hoiming Bonny Lee, CTE Computer Science & Engineering
+Mr. Tsee Lee, CTE Computer Science & Engineering
+Mr. Rick Lopez, CTE Computer Science & Engineering
+Mr. Timothy Lyons, CTE Computer Science & Engineering
+Mr. Mike Miller, CTE Computer Science & Engineering
+Ms. Marina Moshchenko, CTE Computer Science & Engineering
+Dr. Thomas Price, CTE Computer Science & Engineering
+Ms. Tiffany Wong, CTE Computer Science & Engineering
 Mr. Matthew Adelizzi, English
 Mr. Samuel Armen, English
 Ms. Erin Beach, English

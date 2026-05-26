@@ -13,12 +13,12 @@ class Student:
 
     @staticmethod
     def get_student_list() -> list:
-        list = []
+        student_list = []
         with open("student_names.txt", 'r') as file:
             for stud_key, line in enumerate(file):
                 student = Student(line.strip(), stud_key + 1)
-                list.append(student)
-        return list
+                student_list.append(student)
+        return student_list
     
     @staticmethod
     def get_id(name: str) -> int:

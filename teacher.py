@@ -21,7 +21,7 @@ class Teacher:
         return teach_dict
 
     @staticmethod
-    def teacher_cmd() -> list:
+    def get_teacher_list() -> list:
         teacher_list = []
         with open("teacher_file.txt", 'r') as f:
             for id, line in enumerate(f):

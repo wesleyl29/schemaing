@@ -11,7 +11,7 @@ class Department:
         return f"INSERT INTO Department (DepartmentName) VALUES ('{self.department_name}');"
 
     @staticmethod
-    def departments() -> list:
+    def get_department_list() -> list:
         dept_name_list = Utility.build_data_csv_no_duplicates('/workspaces/schemaing/teacher_file.txt', 1)
         dept_list = []
         for dept_key, name in enumerate(dept_name_list):
@@ -24,7 +24,7 @@ class Department:
         for department in list:
             if department.get_name() == dept:
                 return list.index(department)
-        return 2
+        return 0
 
     def get_name(self) -> str:
         return self.department_name
