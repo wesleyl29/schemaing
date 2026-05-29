@@ -54,6 +54,3 @@ def get_random_course(amount: int) -> list:
         if count[possible_course] < 5:
             selected_courses.append(possible_course)
     return selected_courses
-
-
-
