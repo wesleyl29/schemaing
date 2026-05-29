@@ -6,8 +6,6 @@ from teacher import Teacher
 from collections import Counter
 
 class Class:
-    # remove seed after testing
-    random.seed(42)
     CLASSES_AMOUNT = [random.randint(167, 200) for _ in range(10)]
 
     def __init__(self, period: int, room_id: int, teacher_id: int, course_id: int, class_id: int):
@@ -19,6 +17,10 @@ class Class:
 
     def __str__(self):
         return f"INSERT INTO Class ( Period, RoomID, TeacherID, CourseID) VALUES ( {self.period}, {self.room_id}, {self.teacher_id}, {self.course_id} );"
+
+    @property
+    def get_id(self):
+        return self.class_id
 
     @staticmethod
     def get_class_list():

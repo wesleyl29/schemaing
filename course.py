@@ -3,13 +3,10 @@ from utility import Utility
 
 
 class Course:
-    course_dict = {}
-
     def __init__(self, course_type_id: int, course_name: str, course_id: int):
         self.course_type_id = course_type_id
         self.course_name =  course_name
         self.course_id = course_id
-        Course.course_dict[course_name] = course_id
 
     def __str__(self):
         return f"INSERT INTO Course ( CourseName, CourseTypeID ) VALUES ( '{self.course_name}', {self.course_type_id} );"
@@ -17,10 +14,6 @@ class Course:
     @property
     def get_course_id(self):
         return self.course_id
-
-    @staticmethod
-    def get_id(name: str) -> int:
-        return Course.course_dict[name]
 
     @staticmethod
     def get_course_list() -> list:

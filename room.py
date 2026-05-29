@@ -1,10 +1,7 @@
 class Room:
-    room_dict = {}
-
     def __init__(self, room: str, room_id: int):
         self.room = room
         self.room_id = room_id
-        Room.room_dict[room] = room_id
 
     def __str__(self):
         return f"INSERT INTO Room (Class) VALUES ('{self.room}');"

@@ -1,12 +1,9 @@
 from utility import Utility
 
 class Student:
-    student_dict = {}
-
     def __init__(self, name: str, student_id: int):
         self.student_id = student_id
         self.name = name
-        Student.student_dict[name] = student_id
 
     def __str__(self):
         return f"INSERT INTO Student VALUES ('{self.name}');"
@@ -20,9 +17,9 @@ class Student:
                 student_list.append(student)
         return student_list
     
-    @staticmethod
-    def get_id(name: str) -> int:
-        return Student.student_dict[name]
+    @property
+    def get_id(self) -> int:
+        return self.student_id
     
     @property
     def get_name(self) -> str:
