@@ -19,16 +19,3 @@ class Assignment:
     @staticmethod
     def get_dict() -> dict:
         pass
-
-# TODO: add class dictionary
-
-assignment_count = 0
-assignment_id = 1
-student_dict = Student.get_dict()
-assignment_type_dict = AssignmentType.get_dict()
-student = list(student_dict)
-assignment_type = list(assignment_type_dict)
-
-with open('./cmd.sql', 'a') as file:
-    for i in range(1, 13):
-        pass

@@ -14,10 +14,6 @@ class Room:
         return self.room_id
 
     @staticmethod
-    def get_id_dict(room: str) -> int:
-        return Room.room_dict[room]
-
-    @staticmethod
     def get_room_list() -> list:
         room_list = []
         count = 1

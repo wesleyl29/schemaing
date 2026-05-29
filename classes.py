@@ -49,7 +49,7 @@ def get_random_course(amount: int) -> list:
     count = Counter(selected_courses)
     while len(selected_courses) < amount:
         possible_course = random.choice(course_list)
-        if count(possible_course) < 5:
+        if count[possible_course] < 5:
             selected_courses.append(possible_course)
     return selected_courses
 
