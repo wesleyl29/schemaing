@@ -18,7 +18,7 @@ class Roster:
     
     @property
     def get_class_id(self):
-        return self.get_class_id
+        return self.class_id
     
     @property
     def get_student_id(self):

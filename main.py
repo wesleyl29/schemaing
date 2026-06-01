@@ -19,3 +19,7 @@ class_list = Class.get_class_list()
 roster_list = Roster.get_roster_list()
 assignment_type_list = AssignmentType.get_assignment_type_list()
 assignment_list = Assignment.get_assignment_list()
+
+with open ("cmd.sql", 'a') as f:
+    for ass in assignment_list:
+        print(ass, file = f)

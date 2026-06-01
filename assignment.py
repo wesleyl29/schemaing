@@ -13,22 +13,19 @@ class Assignment:
         self.student_id = student_id
 
     def __str__(self):
-        return f"""INSERT INTO Assignment (AssignmentType, AssignmentTypeID, CourseID, Grade, StudentID) VALUES( 
-        '{self.assignment_name}', {self.assignment_id}, {self.class_id}, {self.grade}, {self.student_id} );"""
+        return f"INSERT INTO Assignment (AssignmentType, AssignmentTypeID, CourseID, Grade, StudentID) VALUES('{self.assignment_name}', {self.assignment_id}, {self.class_id}, {self.grade}, {self.student_id} );"
 
     @staticmethod
     def get_assignment_list() -> list:
         assignment_list = []
         assignment_id = 1
         roster_list = Roster.get_roster_list()
-        MAJOR_COUNT = 3
-        MINOR_COUNT = 12
-        
         for roster in roster_list:
-            for i in range(MAJOR_COUNT):
-                assignment_list.append(Assignment(2, assignment_id, roster.get_class_id, random.randint(75,100), roster.get_student_id))
+            for i in range(1, 4):
+                assignment_list.append(Assignment("Major Assessment " + str(i), assignment_id, 2, roster.get_class_id, random.randint(75,100), roster.get_student_id))
                 assignment_id += 1
-            for i in range(MINOR_COUNT):
-                assignment_list.append(Assignment(1, assignment_id, roster.get_class_id, random.randint(75,100), roster.get_student_id))
+            for i in range(1, 13):
+                assignment_list.append(Assignment("Minor Assessment " + str(i), assignment_id, 1, roster.get_class_id, random.randint(75,100), roster.get_student_id))
                 assignment_id += 1
+        return assignment_list
     
