@@ -14,7 +14,7 @@ class CourseTypes:
 
     @staticmethod
     def get_id(name: str) -> int:
-        return CourseTypes.course_type_dict[name]
+        return CourseTypes.course_type_dict[name]+1
 
     @staticmethod
     def get_course_type_list() -> list:
