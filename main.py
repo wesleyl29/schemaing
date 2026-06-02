@@ -24,4 +24,4 @@ every_list = [student_list, department_list, teacher_list, course_type_list, cou
 with open ("cmd.sql", 'a') as f:
     for item_list in every_list:
         for item in item_list:
-            print("hi", file = f)
+            print(item, file = f)

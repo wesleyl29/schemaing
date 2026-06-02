@@ -4,7 +4,7 @@ class AssignmentType:
         self.assignment_id = assignment_id
 
     def __str__(self):
-        return f"INSERT INTO AssignmentType (AssignmentTypeID, AssignmentTypeName) VALUES ('{self.assignment_id}', {self.assignment_type});"
+        return f"INSERT INTO AssignmentType (AssignmentTypeID, AssignmentTypeName) VALUES ('{self.assignment_type}', {self.assignment_id})"
 
     @staticmethod
     def get_assignment_type_list():
