@@ -13,7 +13,7 @@ class Assignment:
         self.student_id = student_id
 
     def __str__(self):
-        return f"INSERT INTO Assignment (AssignmentType, AssignmentTypeID, CourseID, Grade, StudentID) VALUES('{self.assignment_name}', {self.assignment_id}, {self.class_id}, {self.grade}, {self.student_id} );"
+        return f"('{self.assignment_name}', {self.assignment_id}, {self.class_id}, {self.grade}, {self.student_id} )"
 
     @staticmethod
     def get_assignment_list() -> list:

@@ -8,7 +8,7 @@ class Teacher:
         self.dept_id = dept_id
 
     def __str__(self):
-        return f"INSERT INTO Teacher (TeacherName, DepartmentID) VALUES ('{self.teacher_name}', {self.dept_id});"
+        return f"('{self.teacher_name}', {self.dept_id})"
 
     @staticmethod
     def get_teacher_list() -> list:
