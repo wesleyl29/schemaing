@@ -20,6 +20,8 @@ roster_list = Roster.get_roster_list()
 assignment_type_list = AssignmentType.get_assignment_type_list()
 assignment_list = Assignment.get_assignment_list()
 
+every_list = [student_list, department_list, teacher_list, course_type_list, course_list, room_list, class_list, roster_list, assignment_type_list, assignment_list]
 with open ("cmd.sql", 'a') as f:
-    for ass in assignment_list:
-        print(ass, file = f)
+    for item_list in every_list:
+        for item in item_list:
+            print(item, file = f)
