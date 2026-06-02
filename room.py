@@ -4,7 +4,7 @@ class Room:
         self.room_id = room_id
 
     def __str__(self):
-        return f"INSERT INTO Room (Class) VALUES ('{self.room}');"
+        return f"('{self.room}')"
 
     @property
     def get_id(self):

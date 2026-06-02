@@ -10,7 +10,7 @@ class Roster:
         self.roster_id = roster_id
 
     def __str__(self):
-        return f"INSERT INTO Roster (ClassID, StudentID) VALUES ({self.class_id}, {self.student_id});"
+        return f"({self.class_id}, {self.student_id})"
     
     @property
     def get_id(self):

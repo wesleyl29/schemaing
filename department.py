@@ -8,7 +8,7 @@ class Department:
         self.department_name = department_name
 
     def __str__(self):
-        return f"INSERT INTO Department (DepartmentName) VALUES ('{self.department_name}');"
+        return f"('{self.department_name}')"
 
     @staticmethod
     def get_department_list() -> list:

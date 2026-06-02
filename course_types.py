@@ -10,7 +10,7 @@ class CourseTypes:
         CourseTypes.course_type_dict[course_type] = course_type_id
 
     def __str__(self):
-        return f"INSERT INTO CourseType ( CourseTypeName ) VALUES ( '{self.course_type}' );"
+        return f"( '{self.course_type}' )"
 
     @staticmethod
     def get_id(name: str) -> int:

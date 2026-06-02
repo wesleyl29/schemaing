@@ -9,7 +9,7 @@ class Course:
         self.course_id = course_id
 
     def __str__(self):
-        return f"INSERT INTO Course ( CourseName, CourseTypeID ) VALUES ( '{self.course_name}', {self.course_type_id} );"
+        return f"( '{self.course_name}', {self.course_type_id} )"
 
     @property
     def get_course_id(self):

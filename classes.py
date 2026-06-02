@@ -16,7 +16,7 @@ class Class:
         self.class_id = class_id
 
     def __str__(self):
-        return f"INSERT INTO Class ( Period, RoomID, TeacherID, CourseID) VALUES ( {self.period}, {self.room_id}, {self.teacher_id}, {self.course_id} );"
+        return f"( {self.period}, {self.room_id}, {self.teacher_id}, {self.course_id} )"
 
     @property
     def get_id(self):
