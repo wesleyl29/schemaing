@@ -11,22 +11,12 @@ class Teacher:
         return f"INSERT INTO Teacher (TeacherName, DepartmentID) VALUES ('{self.teacher_name}', {self.dept_id});"
 
     @staticmethod
-    def get_dict() -> dict:
-        teach_dict = {}
-        teach_id = 1
-        with open("teacher_file.txt") as f:
-            for line in f:
-                teach_dict[line.strip().split(',',1)[0]] = teach_id
-                teach_id += 1
-        return teach_dict
-
-    @staticmethod
     def get_teacher_list() -> list:
         teacher_list = []
         with open("teacher_file.txt", 'r') as f:
             for id, line in enumerate(f):
                 dept = line.strip().split(', ',1)[1]
-                teacher = Teacher(line.strip().split(',',1)[0], id+1, Department.get_dept_id(dept)+1)
+                teacher = Teacher(Utility.validate_string(line.strip().split(',',1)[0]), id+1, Department.get_dept_id(dept)+1)
                 teacher_list.append(teacher)
         return teacher_list
     
