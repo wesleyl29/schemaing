@@ -16,6 +16,7 @@ class Assignment:
         return f"('{self.assignment_name}', {self.assignment_id}, {self.class_id}, {self.grade}, {self.student_id} )"
 
     @staticmethod
+    # TODO: rewrite assignment to use assignment_name for efficency
     def get_assignment_list() -> list:
         assignment_list = []
         assignment_id = 1
