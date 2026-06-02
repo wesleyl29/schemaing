@@ -6,7 +6,7 @@ class Student:
         self.name = name
 
     def __str__(self):
-        return f"INSERT INTO Student (StudentName) VALUES ('{self.name}');"
+        return f"('{self.name}');"
 
     @staticmethod
     def get_student_list() -> list:
