@@ -39,8 +39,6 @@ class Class:
         return class_list
 
 
-
-
 def get_random(directory: list, amount: int) -> list:
     return random.sample(directory, amount)
 

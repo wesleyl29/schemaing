@@ -1,32 +1,33 @@
 import random
 
-from assignment_type import AssignmentType
 from roster import Roster
+from assignment_name import AssignmentName
 
 class Assignment:
-    def __init__(self, assignment_name: str, assignment_id: int, assignment_type_id: int, class_id: int, grade: int, student_id: int):
-        self.assignment_name = assignment_name
-        self.assignment_id = assignment_id
-        self.assignment_type_id = assignment_type_id
-        self.class_id = class_id
+    def __init__(self, assignment_name_id: int, roster_id: int, grade: int):
+        self.assignment_name_id = assignment_name_id
+        self.roster_id = roster_id
         self.grade = grade
-        self.student_id = student_id
 
     def __str__(self):
-        return f"('{self.assignment_name}', {self.assignment_id}, {self.class_id}, {self.grade}, {self.student_id} )"
+        return f"({self.assignment_name_id}, {self.roster_id}, {self.grade} )"
 
     @staticmethod
     # TODO: rewrite assignment to use assignment_name for efficency
     def get_assignment_list() -> list:
         assignment_list = []
-        assignment_id = 1
         roster_list = Roster.get_roster_list()
+        assignment_name_list = AssignmentName.get_assignment_name_list()
         for roster in roster_list:
-            for i in range(1, 4):
-                assignment_list.append(Assignment("Major Assessment " + str(i), assignment_id, 2, roster.get_class_id, random.randint(75,100), roster.get_student_id))
-                assignment_id += 1
-            for i in range(1, 13):
-                assignment_list.append(Assignment("Minor Assessment " + str(i), assignment_id, 1, roster.get_class_id, random.randint(75,100), roster.get_student_id))
-                assignment_id += 1
+            for i in range(3):
+                assignment_list.append(Assignment(assignment_name_list[i].get_id, 
+                                                  roster.get_id,
+                                                  random.randint(75,100)
+                                                  ))
+            for i in range(15):
+                assignment_list.append(Assignment(assignment_name_list[i + 3].get_id, 
+                                                  roster.get_id,
+                                                  random.randint(75,100)
+                                                  ))
         return assignment_list
     
