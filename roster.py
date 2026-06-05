@@ -39,9 +39,7 @@ class Roster:
                     roster_id += 1
 
         return roster_list
-    
-def get_random(directory: list, amount: int) -> list:
-    return random.sample(directory, amount)
+
 
 def get_class_list(period: int) -> list:
     class_amount = Class.CLASSES_AMOUNT[period]
