@@ -35,7 +35,10 @@ class Class:
             selected_rooms = get_random(room_list, amount)
             selected_courses = get_random_course(amount)
             for i in range(amount):
-                class_list.append(Class(period, selected_rooms[i].get_id, selected_teachers[i].get_teach_id, selected_courses[i].get_course_id, count))
+                class_list.append(Class(period, selected_rooms[i].get_id, 
+                                        selected_teachers[i].get_teach_id, 
+                                        selected_courses[i].get_course_id, 
+                                        count))
         return class_list
 
 
@@ -51,4 +54,6 @@ def get_random_course(amount: int) -> list:
         possible_course = random.choice(course_list)
         if count[possible_course] < 5:
             selected_courses.append(possible_course)
+    for course in selected_courses:
+        print(str(course.get_course_id))
     return selected_courses

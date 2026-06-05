@@ -5,14 +5,14 @@ from utility import Utility
 class Course:
     def __init__(self, course_type_id: int, course_name: str, course_id: int):
         self.course_type_id = course_type_id
-        self.course_name =  course_name
+        self.course_name = course_name
         self.course_id = course_id
 
     def __str__(self):
         return f"( '{self.course_name}', {self.course_type_id} )"
 
     @property
-    def get_course_id(self):
+    def get_course_id(self) -> int:
         return self.course_id
 
     @staticmethod
@@ -27,6 +27,6 @@ class Course:
             course_type = name_type[1]
             course_type_id = CourseTypes.get_id(course_type)
 
-            course_list.append(Course(course_type_id, course_name, course_id))
+            course_list.append(Course(course_type_id, course_name, course_id + 1))
 
         return course_list

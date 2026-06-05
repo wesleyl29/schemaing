@@ -13,10 +13,6 @@ class Roster:
         return f"({self.class_id}, {self.student_id})"
     
     @property
-    def get_id(self):
-        return self.roster_id
-    
-    @property
     def get_class_id(self):
         return self.class_id
     
