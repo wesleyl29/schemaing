@@ -54,6 +54,4 @@ def get_random_course(amount: int) -> list:
         possible_course = random.choice(course_list)
         if count[possible_course] < 5:
             selected_courses.append(possible_course)
-    for course in selected_courses:
-        print(str(course.get_course_id))
     return selected_courses
