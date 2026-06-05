@@ -5,7 +5,7 @@ class AssignmentName:
         self.assignment_type_id = assignment_type_id
     
     def __str__(self):
-        return f"('{self.assignment_name}')"
+        return f"('{self.assignment_name}', {self.assignment_type_id})"
     
     @property
     def get_id(self):
