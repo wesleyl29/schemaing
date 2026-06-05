@@ -32,7 +32,7 @@ insert_list = ["INSERT INTO Student (StudentName) VALUES ",
                "INSERT INTO Roster (ClassID, StudentID) VALUES ",
                "INSERT INTO AssignmentType (AssignmentTypeName) VALUES ",
                "INSERT INTO AssignmentNames (AssignmentName, AssignmentTypeID) VALUES ",
-               "INSERT INTO Assignment (AssignmentTypeID, ClassID, Grade, StudentID) VALUES "]
+               "INSERT INTO Assignment (AssignmentNamesID, ClassID, StudentID, Grade) VALUES "]
 every_list = [student_list, department_list, teacher_list, 
             course_type_list, course_list, room_list, 
             class_list, roster_list, assignment_type_list, 
