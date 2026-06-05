@@ -4,7 +4,7 @@ class AssignmentType:
         self.assignment_id = assignment_id
 
     def __str__(self):
-        return f"({self.assignment_id}, '{self.assignment_type}')"
+        return f"('{self.assignment_type}')"
 
     @staticmethod
     def get_assignment_type_list():
