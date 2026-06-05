@@ -30,7 +30,7 @@ insert_list = ["INSERT INTO Student (StudentName) VALUES ",
                "INSERT INTO Room (Room) VALUES ",
                "INSERT INTO Class (Period, RoomID, TeacherID, CourseID) VALUES ",
                "INSERT INTO Roster (ClassID, StudentID) VALUES ",
-               "INSERT INTO AssignmentType (AssignmentTypeID, AssignmentTypeName) VALUES ",
+               "INSERT INTO AssignmentType (AssignmentTypeName) VALUES ",
                "INSERT INTO AssignmentNames (AssignmentName, AssignmentTypeID) VALUES ",
                "INSERT INTO Assignment (AssignmentTypeID, ClassID, Grade, StudentID) VALUES "]
 every_list = [student_list, department_list, teacher_list, 
