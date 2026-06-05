@@ -22,5 +22,6 @@ class AssignmentName:
 
         for i in range(1, 13):
             assignment_name_list.append(AssignmentName(f"Minor Assessment {i}", assignment_id, 1))
+            assignment_id += 1
 
         return assignment_name_list
