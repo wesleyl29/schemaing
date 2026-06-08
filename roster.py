@@ -24,17 +24,16 @@ class Roster:
     def get_roster_list() -> list:
         roster_list = []
         student_list = Student.get_student_list()
-        class_list = Class.get_class_list()
         roster_id = 1
         class_id = 0
         for i in range(10):
             amount_list = get_class_list(i)
             random.shuffle(student_list)
             student_id = 1
-            for class_index, student_amount in enumerate(amount_list):
+            for student_amount in (amount_list):
                 class_id += 1
-                for student_index in range(student_amount):
-                    roster_list.append(Roster(class_id, student_list[student_index].get_id, roster_id))
+                for _ in range(student_amount):
+                    roster_list.append(Roster(class_id, student_list[student_id].get_id, roster_id))
                     student_id += 1
                     roster_id += 1
 
