@@ -12,7 +12,7 @@ class Department:
 
     @staticmethod
     def get_department_list() -> list:
-        dept_name_list = Utility.build_data_csv_no_duplicates('/workspaces/schemaing/teacher_file.txt', 1)
+        dept_name_list = Utility.build_data_csv_no_duplicates('./teacher_file.txt', 1)
         dept_list = []
         for dept_key, name in enumerate(dept_name_list):
             dept_list.append(Department(name[1:], dept_key + 1))
