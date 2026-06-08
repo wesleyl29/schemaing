@@ -31,5 +31,5 @@ class Assignment:
                                                   roster.get_class_id,
                                                   random.randint(75,100)
                                                   ))
-        return [roster_list, assignment_list]
+        return assignment_list
     
