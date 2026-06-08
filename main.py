@@ -45,5 +45,3 @@ with open ("cmd.sql", 'a') as f:
             stri = ';' if idx == len(item_list) - 1 else ','
             random_list = [str(item), stri]
             print(" ".join(random_list), file = f)
-
-

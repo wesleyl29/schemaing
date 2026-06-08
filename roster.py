@@ -4,6 +4,9 @@ from student import Student
 from classes import Class
 
 class Roster:
+    random.shuffle(Student.get_student_list())
+    STUDENT_LIST = Student.get_student_list()
+
     def __init__(self, class_id, student_id, roster_id):
         self.class_id = class_id
         self.student_id = student_id
@@ -23,17 +26,15 @@ class Roster:
     @staticmethod
     def get_roster_list() -> list:
         roster_list = []
-        student_list = Student.get_student_list()
         roster_id = 1
         class_id = 0
         for i in range(10):
             amount_list = get_class_list(i)
-            random.shuffle(student_list)
             student_id = 0
             for student_amount in (amount_list):
                 class_id += 1
                 for _ in range(student_amount):
-                    roster_list.append(Roster(class_id, student_list[student_id].get_id, roster_id))
+                    roster_list.append(Roster(class_id, Roster.STUDENT_LIST[student_id].get_id, roster_id))
                     student_id += 1
                     roster_id += 1
 
