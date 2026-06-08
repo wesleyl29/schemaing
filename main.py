@@ -17,10 +17,10 @@ course_type_list = CourseTypes.get_course_type_list()
 course_list = Course.get_course_list()
 room_list = Room.get_room_list()
 class_list = Class.get_class_list()
-roster_list = Roster.get_roster_list()
+roster_list = Assignment.get_assignment_list()[0]
 assignment_type_list = AssignmentType.get_assignment_type_list()
 assignment_name_list = AssignmentName.get_assignment_name_list()
-assignment_list = Assignment.get_assignment_list()
+assignment_list = Assignment.get_assignment_list()[1]
 
 insert_list = ["INSERT INTO Student (StudentName) VALUES ", 
                "INSERT INTO Department (DepartmentName) VALUES ", 
