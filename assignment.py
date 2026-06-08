@@ -11,7 +11,7 @@ class Assignment:
         self.grade = grade
 
     def __str__(self):
-        return f"({self.assignment_name_id}, {self.student_id}, {self.class_id}, {self.grade} )"
+        return f"({self.assignment_name_id}, {self.class_id}, {self.student_id}, {self.grade} )"
 
     @staticmethod
     def get_assignment_list() -> list:
