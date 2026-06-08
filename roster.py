@@ -29,7 +29,7 @@ class Roster:
         for i in range(10):
             amount_list = get_class_list(i)
             random.shuffle(student_list)
-            student_id = 1
+            student_id = 0
             for student_amount in (amount_list):
                 class_id += 1
                 for _ in range(student_amount):
